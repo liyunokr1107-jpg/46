@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信小店2026金秋大促 · 市场开拓与商家谈判实战手册</title>
+    <style>
+        :root {
+            --wx-green: #07C160;
+            --wx-green-light: #F0F9F4;
+            --autumn-warm: #FF7A00;
+            --autumn-bg: #FFF7E6;
+            --autumn-border: #FFD591;
+            --text-main: #191919;
+            --text-regular: #333333;
+            --text-muted: #7A7A7A;
+            --bg-page: #F5F7FA;
+            --bg-card: #FFFFFF;
+            --border-card: #E5E7EB;
+            --red-err: #CF1322;
+            --red-err-bg: #FFF1F0;
+            --red-err-border: #FFA39E;
+            --green-ok: #135200;
+            --green-ok-bg: #F6FFED;
+            --green-ok-border: #B7EB8F;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-regular);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-card);
+        }
+        .header-top-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--wx-green) 0%, var(--autumn-warm) 100%);
+        }
+        .header-content {
+            padding: 32px 36px 20px 36px;
+            text-align: center;
+            border-bottom: 1px solid #F0F0F0;
+            background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
+        }
+        .header-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFF7E6 0%, #F0F9F4 100%);
+            border: 1px solid var(--autumn-border);
+            color: var(--autumn-warm);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .header-title {
+            font-size: 24px;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .header-subtitle { font-size: 14px; color: var(--text-muted); }
+        .main-body { padding: 28px 36px 40px 36px; }
+        .notice-card {
+            background-color: var(--wx-green-light);
+            border-left: 4px solid var(--wx-green);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .notice-icon { color: var(--wx-green); font-size: 18px; font-weight: bold; line-height: 1.4; }
+        .notice-text { font-size: 13.5px; color: var(--text-main); line-height: 1.6; }
+        .notice-text b { color: #047857; }
+        .section-title {
+            font-size: 17px;
+            color: var(--text-main);
+            font-weight: 700;
+            margin: 32px 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--wx-green);
+            border-radius: 2px;
+        }
+        .section-desc { font-size: 13px; color: var(--text-muted); margin-top: -6px; margin-bottom: 14px; }
+        .table-wrap {
+            overflow-x: auto;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+        th {
+            background-color: #FAFAFA;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 12px 14px;
+            border-bottom: 2px solid #E5E7EB;
+            white-space: nowrap;
+        }
+        td { padding: 12px 14px; border-bottom: 1px solid #F0F0F0; color: var(--text-regular); vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background-color: #FBFDFB; }
+        .badge-green { color: var(--wx-green); font-weight: 600; }
+        .badge-gold { color: var(--autumn-warm); font-weight: 600; }
+        .objection-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) { .objection-group { grid-template-columns: 1fr; } }
+        .card-box { border-radius: 8px; padding: 16px; font-size: 13px; }
+        .card-error { background-color: var(--red-err-bg); border: 1px solid var(--red-err-border); color: #5C1D1D; }
+        .card-error h4 { color: var(--red-err); font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .card-correct { background-color: var(--green-ok-bg); border: 1px solid var(--green-ok-border); color: #1A3E11; }
+        .card-correct h4 { color: #237804; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .card-box p { margin-bottom: 6px; line-height: 1.5; }
+        .card-box p:last-child { margin-bottom: 0; }
+        .script-container {
+            background-color: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-left: 4px solid var(--autumn-warm);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .script-step { margin-bottom: 16px; }
+        .script-step:last-child { margin-bottom: 0; }
+        .step-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--autumn-warm);
+            background-color: var(--autumn-bg);
+            border: 1px solid var(--autumn-border);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        .step-content { font-size: 13.5px; color: var(--text-main); line-height: 1.65; }
+        .footer {
+            padding: 20px 36px;
+            background-color: #FAFAFA;
+            border-top: 1px solid #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-top-bar"></div>
+    <div class="header-content">
+        <div class="header-tag">微信小店金秋大促 · 方案4定向拉新专属工具包</div>
+        <h1 class="header-title">市场开拓与商家谈判实战手册</h1>
+        <p class="header-subtitle">政策收益量化 · 痛点拆解破局 · 3分钟标准化谈客话术 · 合规交付闭环</p>
+    </div>
+
+    <div class="main-body">
+        <div class="notice-card">
+            <div class="notice-icon">📢</div>
+            <div class="notice-text">
+                <b>【业务执行底线】</b> 本次金秋大促（9.4 - 9.27）以<b>全网公域跨店凑单</b>与<b>电商成长卡</b>为核心扶持杠杆。市场拓展新店时，必须现场指导商家在后台<b>提报至少 1 个 SKU</b> 并完成<b>30秒代运营合同二次确认</b>，方可有效计入服务商奖励分子与拉新加码。
+            </div>
+        </div>
+
+        <div class="section-title">一、 商家核心收益与资源量化总表（将政策折算为真金白银）</div>
+        <p class="section-desc">注：微信生态内 <b>10 点电商成长卡 ≈ 1 元微信豆/投流金</b>，可直接用于视频号直播加热与带货短视频测流推广。</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 14%;">扶持模块</th>
+                        <th style="width: 28%;">商家核心权益内容</th>
+                        <th style="width: 32%;">量化价值与流量收益</th>
+                        <th style="width: 26%;">获取门槛与实操要点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="badge-green">全网曝光特权</td>
+                        <td>金秋专属红标 + 满减专属会场 + 全域跨店凑单池</td>
+                        <td><b>免费公域曝光</b>：用户购买其他店铺商品凑满150/300时，系统自动展示本店商品进行凑单</td>
+                        <td>仅需提报 1 个及以上 SKU 参与玩法1（混资满减）即可享有</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-green">平台出资补贴</td>
+                        <td>跨店满减（满150-15、300-30等）+ 平台膨胀券</td>
+                        <td><b>平台出资 50%</b>，商家让利上限封死 5%；膨胀券超出部分由<b>平台 100% 全额兜底出资</b></td>
+                        <td>系统自动计算；用户退款时补贴退回平台，商家绝无额外资损</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-green">私域促活利器</td>
+                        <td>主播分享券（平台全资满减券，单客限用3次）</td>
+                        <td><b>零成本激活社群</b>：平台出钱给商家的私域老客发券，大幅提升微信群及单聊转化率</td>
+                        <td>提报直播大场审核通过后下发，可分享至微信群/好友</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-gold">直播大场激励</td>
+                        <td>大场有效 GMV 达成返 <b>1.2% - 3%</b> 电商成长卡</td>
+                        <td>10万大场返 <b>1,200点</b>（120元投流卡）；50万大场返 <b>7,000点</b>（700元投流卡）</td>
+                        <td>单账号单场基础激励最高封顶 90 万点，大场结束后第 8 日发放</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-gold">满减叠加激励</td>
+                        <td>大场有效 GMV 中满减商品占比 ≥ 50%，额外叠加 <b>1%</b></td>
+                        <td>50万大场<b>额外多返 5,000点</b>（500元投流金），两项合计可拿 1,200 元流量卡</td>
+                        <td>直播带货中满减通过的 SKU 销售额过半即可自动叠加获得</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-gold">首次跃迁大奖</td>
+                        <td>6月1日以来单日首次突破指定门槛定额奖励</td>
+                        <td>首破50万奖 <b>3,000点</b>；首破100万奖 <b>1万点</b>；首破3000万奖 <b>5万点</b></td>
+                        <td>单场同时跨越多档按最高档计发，仅限单日首次突破享受</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-green">秋冬应季加码</td>
+                        <td>水产类 / 秋冬服饰（羽绒/羊绒/棉服/保暖内衣）动销加码</td>
+                        <td>新店结算 10-30万奖 <b>600点</b>；30-50万奖 <b>1,800点</b>；≥100万奖 <b>6,000点</b></td>
+                        <td>适用于 9.1-12.31 首次动销新店；秋冬老店亦享增量高系数加成</td>
+                    </tr>
+                    <tr>
+                        <td class="badge-green">双11直通车</td>
+                        <td>提报页面一键开启【续报双11】专属开关</td>
+                        <td><b>免审核直接顺延保送双十一</b>，提前锁定双十一大促主会场及更高额度平台补贴</td>
+                        <td>在金秋大促商品提报列表右上角开启开关即可</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">二、 商家两大核心抗拒点深度剖析与对阵破局</div>
+        <div style="font-weight:600; font-size:14px; margin-bottom:8px;">1. 抗拒点一：商家担忧“这要破价，赔本赚吆喝”</div>
+        <div class="objection-group">
+            <div class="card-box card-error">
+                <h4>❌ 致命错误沟通</h4>
+                <p><b>业务错误回复：</b>“确实破了一点，但单量多/从别的补上来。”</p>
+                <p><b>商家真实顾虑：</b>商家算的是单品毛利硬账，微利产品降价只会“卖得越多亏得越多”，听到直接拒绝沟通。</p>
+            </div>
+            <div class="card-box card-correct">
+                <h4>✔ 正确攻心底层机制</h4>
+                <p>① <b>标价绝不破价</b>：跨店满减是买满150/300的跨店门槛券，日常标价一分不改。</p>
+                <p>② <b>商家让利上限死锁 5%</b>：平台 1:1 补贴，188元的衣服商家最多只承担 9.4 元。</p>
+                <p>③ <b>可手动限制活动库存</b>：教商家把活动库存改成 <b>10 件或 20 件</b>，绝不全店敞开卖，总让利顶格锁死几十块钱，卖完自动下线。</p>
+            </div>
+        </div>
+
+        <div style="font-weight:600; font-size:14px; margin-bottom:8px;">2. 抗拒点二：商家担忧“我们有达人专属价，价格会乱”</div>
+        <div class="objection-group">
+            <div class="card-box card-error">
+                <h4>❌ 致命错误沟通</h4>
+                <p><b>业务错误回复：</b>“好嘞，相对还是比较有吸引力的 / 下个双十一直接续上。”</p>
+                <p><b>商家真实顾虑：</b>达人是店铺命脉，达人一旦发现店铺自营更便宜会直接退播索赔，商家不敢冒险。</p>
+            </div>
+            <div class="card-box card-correct">
+                <h4>✔ 正确攻心底层机制</h4>
+                <p>① <b>SKU 物理隔离</b>：达人专供款式<b>坚决不报</b>，只挑店铺自营秋冬款、老款或打包礼盒报活动。</p>
+                <p>② <b>帮达人多拿流量</b>：大场带货中满减商品占比 ≥ 50%，平台<b>额外奖达人 1% 流量成长卡</b>。达人带平台补贴货品更容易冲量拿奖励，反而更有动力配合。</p>
+            </div>
+        </div>
+
+        <div class="section-title">三、 市场人员 3 分钟标准化谈客话术（现场逐字稿）</div>
+        <div class="script-container">
+            <div class="script-step">
+                <span class="step-label">第 1 步 · 破冰切入与亮明身份</span>
+                <p class="step-content">“张总您好！我是微信官方认证服务商的美飞运营顾问。这次微信官方为了迎战秋季消费季，推出了‘2026金秋大促’，平台自己掏钱搞满减补贴。我们今天过来，就是专门协助咱们店铺把这笔官方补贴和免费公域流量拿到手！”</p>
+            </div>
+            <div class="script-step">
+                <span class="step-label">第 2 步 · 打消顾虑，算清安全账（核心关键）</span>
+                <p class="step-content">
+                    “很多老板一听活动以为要大降价，咱们完全不用担心：<br/>
+                    1. <b>标价一分钱不用降</b>：这是用户买满 150 或 300 才能用的跨店满减券，而且<b>微信替您掏一半</b>！按照官方规则，您单件商品让利上限封死在 5%（100 块钱最多贴 5 块钱）。如果客户抽中膨胀大额券，多出的差额<b>100%由微信全额兜底出资</b>！<br/>
+                    2. <b>达人专供款绝对不动</b>：达人播的主推款咱们一个都不报；咱们就挑 1~2 款自营秋冬款或者组合装报上去，SKU 彻底隔离，根本不会撞价！<br/>
+                    3. <b>活动库存咱们手动填 10 件</b>：咱们不拿全店库存冒险，每款就放 10 件或 20 件，卖完活动自动截止。全店总共让利几十块钱，一分钱都亏不进去！”
+                </p>
+            </div>
+            <div class="script-step">
+                <span class="step-label">第 3 步 · 利益放大与临门一脚</span>
+                <p class="step-content">
+                    “但这几十块钱能给您换来什么？店里直接贴上‘金秋大促’官方红标，进入微信满减主会场；别家店铺卖衣服卖鞋，用户买单凑不满 150 或 300 时，系统会主动推咱们店的商品去凑单，<b>白蹭全网公域曝光</b>！另外后续只要开播单日到 10 万，平台还返 1.2%~2.2% 的官方投流卡！<br/>
+                    现在报名顺便勾上‘续报双11’，双十一会场坑位也提前锁定了。咱们现在花 2 分钟在后台挑 1 个款报上去，把官方扶持先占住！”
+                </p>
+            </div>
+        </div>
+
+        <div class="section-title">四、 市场人员拉新交付与合规验收标准（严防虚假签约）</div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 22%;">验收环节</th>
+                        <th style="width: 38%;">系统操作标准路径</th>
+                        <th style="width: 40%;">合格判定标准（交付底线）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight:600;">1. 满减活动报名 (玩法1)</td>
+                        <td>电脑端登录：微信小店后台 > 营销中心 > 平台活动 >【金秋大促跨店满减补贴】</td>
+                        <td>勾选至少 <b>1 个商品 SKU</b>，手动设置活动库存（如 10 件），并<b>必须点击右下角【提报商品】绿色按钮</b>，页面流转至‘已提报的商品’。</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">2. 续报双11开关开启</td>
+                        <td>商品提报列表右上角：【续报双11】开关切换为开启状态</td>
+                        <td>开启后显示为绿色激活，确保该商品在金秋大促结束后自动顺延保送至 11.11 大促主会场。</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600;">3. 代运营合同二次确认</td>
+                        <td>商家端后台登录：服务市场 > 运营服务 > 顶部代运营合作协议提醒</td>
+                        <td><b>商家必须在合同预览界面停留浏览 ≥ 30 秒</b>，并点击【确认合作】。状态变更为‘已生效’，严防‘待确认’导致结算冻结。</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:600; color:var(--red-err);">4. 严禁违规舞弊红线</td>
+                        <td>合规经营排查</td>
+                        <td><b>严禁刷单、大额虚假交易秒退、先涨后降变相涨价</b>。违者取消全额奖励并追索 50% 违约金，追究法律责任。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>河南美飞 · 市场运营部内部培训物料 · 请勿外传</div>
+        <div>微信小店 2026 金秋大促专享版</div>
+    </div>
+</div>
+
+</body>
+</html>
